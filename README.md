@@ -1,2 +1,4 @@
 # Go-Mobile-Applications
-Tests go gomobile 
+Tests gomobile 
+
+gomobile build -androidapi=21
