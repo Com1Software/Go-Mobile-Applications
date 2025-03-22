@@ -5,6 +5,8 @@ Tests gomobile
 
 gomobile build -androidapi=21
 
+export PATH=$PATH:~/go/bin
+
 [Gomobile Documentation](https://pkg.go.dev/golang.org/x/mobile/cmd/gomobile)
 
 [Gomobile Mirror](https://github.com/golang/mobile)
