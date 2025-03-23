@@ -21,6 +21,7 @@ export PATH=$PATH:~/go/bin
 
 In Android Studio Go SDK Manager In the SDK Tool Install NDK Side by Side
 
+Windows:
 Edit System Environmental Variables and add
 
 ANDROID_HOME
@@ -31,6 +32,9 @@ ANDROID_NDK_HOME
 
 echo %ANDROID_HOME%
 echo %ANDROID_NDK_HOME%
+
+Mac:
+export [variable_name]=[variable_value]
 
 ../../gopath/bin/bin/fyne package -os android -appID com.example.myapp
 
