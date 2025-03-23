@@ -11,6 +11,8 @@ export PATH=$PATH:~/go/bin
 
 [Gomobile Mirror](https://github.com/golang/mobile)
 
+[Go bindings for OpenGL ES 2.0 and ES 3.0](https://pkg.go.dev/golang.org/x/mobile/gl)
+
 [Mobile Wiki](https://go.dev/wiki/Mobile)
 
 [fyne](https://fyne.io/)
