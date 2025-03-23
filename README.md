@@ -19,9 +19,6 @@ export PATH=$PATH:~/go/bin
 
  go install fyne.io/fyne/v2/cmd/fyne@latest
 
-Install NDK - next ste may cover
-https://developer.android.com/ndk/downloads
-
 In Android Studio Go SDK Manager In the SDK Tool Install NDK Side by Side
 
 Edit System Environmental Variables and add
@@ -36,3 +33,5 @@ echo %ANDROID_HOME%
 echo %ANDROID_NDK_HOME%
 
 ../../gopath/bin/bin/fyne package -os android -appID com.example.myapp
+
+/users/infor/go//bin/fyne package -os android -appID com.example.myapp
