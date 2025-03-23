@@ -16,3 +16,5 @@ export PATH=$PATH:~/go/bin
 [Mobile Wiki](https://go.dev/wiki/Mobile)
 
 [fyne](https://fyne.io/)
+
+../../gopath/bin/bin/fyne package -os android -appID com.example.myapp
