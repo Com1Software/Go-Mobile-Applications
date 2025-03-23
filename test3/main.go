@@ -1,32 +1,36 @@
 package main
 
 import (
-	"log"
-
+	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/widget"
 )
 
 func main() {
-	myApp := app.New()
-	myWindow := myApp.NewWindow("Form Widget")
+	// Create the application
+	a := app.New()
 
-	entry := widget.NewEntry()
-	textArea := widget.NewMultiLineEntry()
+	// Create the main window
+	w := a.NewWindow("Two Buttons")
 
-	form := &widget.Form{
-		Items: []*widget.FormItem{ // we can specify items in the constructor
-			{Text: "Entry", Widget: entry}},
-		OnSubmit: func() { // optional, handle form submission
-			log.Println("Form submitted:", entry.Text)
-			log.Println("multiline:", textArea.Text)
-			myWindow.Close()
-		},
-	}
+	// Create the "Exit" button
+	exitButton := widget.NewButton("Exit", func() {
+		a.Quit()
+	})
 
-	// we can also append items
-	form.Append("Text", textArea)
+	// Create the "Say Hello" button
+	helloButton := widget.NewButton("Say Hello", func() {
+		dialog.ShowInformation("Hello", "Hello, World!", w)
+	})
 
-	myWindow.SetContent(form)
-	myWindow.ShowAndRun()
+	// Set the content of the window
+	w.SetContent(container.NewVBox(helloButton, exitButton))
+
+	// Resize the window to make it larger
+	w.Resize(fyne.NewSize(400, 300))
+
+	// Show the window and run the application
+	w.ShowAndRun()
 }
