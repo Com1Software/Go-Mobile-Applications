@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
@@ -17,7 +19,7 @@ func main() {
 
 	// Create the "Exit" button
 	exitButton := widget.NewButton("Exit", func() {
-		a.Quit()
+		os.Exit(0)
 	})
 
 	// Create the "Say Hello" button
