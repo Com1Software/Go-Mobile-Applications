@@ -16,6 +16,7 @@ type CustomButton struct {
 	text     string
 	color    color.Color
 	onTapped func()
+	bgRect   *canvas.Rectangle
 }
 
 func NewCustomButton(text string, bgColor color.Color, onTapped func()) *CustomButton {
@@ -27,9 +28,9 @@ func NewCustomButton(text string, bgColor color.Color, onTapped func()) *CustomB
 // CreateRenderer defines the custom rendering for the button
 func (b *CustomButton) CreateRenderer() fyne.WidgetRenderer {
 	label := widget.NewLabel(b.text)
-	bg := canvas.NewRectangle(b.color)
+	b.bgRect = canvas.NewRectangle(b.color) // Use a modifiable background
 
-	content := container.NewMax(bg, label)
+	content := container.NewMax(b.bgRect, label)
 	return widget.NewSimpleRenderer(content)
 }
 
@@ -37,6 +38,8 @@ func (b *CustomButton) Tapped(_ *fyne.PointEvent) {
 	if b.onTapped != nil {
 		b.onTapped()
 	}
+	b.bgRect.FillColor = color.RGBA{0, 255, 0, 255} // Change to green
+	b.bgRect.Refresh()                              // Update UI
 }
 
 func main() {
