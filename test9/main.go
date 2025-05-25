@@ -22,11 +22,16 @@ func main() {
 	a := app.New()
 	w := a.NewWindow("Listening on " + xip + ":" + port)
 
-	button1a := NewCustomButton("", color.RGBA{0, 0, 255, 255}, func() {
-		println("Button clicked!")
-	})
+	//	button1a := NewCustomButton("", color.RGBA{0, 0, 255, 255}, func() {
+	//		println("Button clicked!")
+	//	})
 	button2a := NewCustomButton("", color.RGBA{0, 0, 255, 255}, func() {
 		println("Button clicked!")
+	})
+
+	button1a := NewCustomButton("", color.RGBA{0, 0, 255, 255}, func() {
+		println("Button 1 clicked!")
+		button2a.Tapped(&fyne.PointEvent{}) // Simulate button 2 being pressed
 	})
 
 	buttonContainer1a := container.NewGridWrap(fyne.NewSize(40, 40), button1a)
